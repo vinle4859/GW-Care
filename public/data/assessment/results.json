@@ -1,0 +1,53 @@
+
+{
+  "profiles": [
+    {
+      "profileKey": "profile_balanced_resilience",
+      "minScore": 0,
+      "maxScore": 25
+    },
+    {
+      "profileKey": "profile_burnout_fatigue",
+      "minScore": 26,
+      "maxScore": 45
+    },
+    {
+      "profileKey": "profile_anxiety_stress",
+      "minScore": 46,
+      "maxScore": 65
+    },
+    {
+      "profileKey": "profile_depression_motivation",
+      "minScore": 66,
+      "maxScore": 100
+    }
+  ],
+  "scoring": {
+    "q1": [0, 1, 2, 3],
+    "q2": [0, 1, 2, 3],
+    "q3": [0, 1, 2, 3],
+    "q4": [0, 1, 2, 3, 4],
+    "q5": [0, 1, 2, 3],
+    "q6": [3, 2, 1, 0],
+    "q7": [0, 1, 2, 3],
+    "q8": [3, 2, 1, 0],
+    "q9": [3, 2, 1, 0],
+    "q10": [0, 1, 2, 3],
+    "q11": [0, 1, 2, 3],
+    "q12": [3, 2, 1, 0],
+    "q13": [3, 2, 1, 0],
+    "q14": [3, 2, 1, 0],
+    "q15": [3, 2, 1, 0],
+    "q16": [0, 1, 2, 3],
+    "q17": [3, 2, 1, 0],
+    "q18": [3, 2, 1, 0],
+    "q19": [3, 2, 1, 0],
+    "q20": [0, 1, 2, 3],
+    "q21": [3, 2, 1, 0],
+    "q22": [3, 2, 1, 0],
+    "q23": [0, 1, 2, 3],
+    "q24": [3, 2, 1, 0],
+    "q25": [0, 1, 2, 3],
+    "q26": [3, 2, 1, 0]
+  }
+}

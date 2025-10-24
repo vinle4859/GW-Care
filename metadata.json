@@ -1,0 +1,7 @@
+{
+  "name": "GW-Care - Mental Wellness Companion",
+  "description": "An AI-powered mental wellness application designed to provide personal support through guided check-ins, personalized plans, emotion tracking, and a friendly chat companion. Built to be a safe and supportive space for users, with a Vietnamese-first approach.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

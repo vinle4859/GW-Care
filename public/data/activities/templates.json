@@ -1,0 +1,36 @@
+{
+  "categories": [
+    {
+      "name": "Mindfulness & Grounding",
+      "activities": [
+        "Practice a 5-minute guided meditation using a free app or video.",
+        "Perform a '5-4-3-2-1' grounding exercise: Name 5 things you see, 4 you can touch, 3 you can hear, 2 you can smell, and 1 you can taste.",
+        "Eat one meal or snack mindfully, paying full attention to the taste, texture, and smell, without distractions."
+      ]
+    },
+    {
+      "name": "Physical Activity",
+      "activities": [
+        "Go for a 15-minute brisk walk outside.",
+        "Do a 10-minute stretching routine, focusing on areas of tension.",
+        "Put on your favorite upbeat song and dance for its entire duration."
+      ]
+    },
+    {
+      "name": "Cognitive & Creative",
+      "activities": [
+        "Write down three things that went well today, however small.",
+        "Spend 15 minutes on a creative hobby: drawing, writing, playing an instrument, etc.",
+        "Challenge a recurring negative thought: Ask yourself, 'Is this 100% true? What's a more balanced perspective?'"
+      ]
+    },
+    {
+      "name": "Connection & Environment",
+      "activities": [
+        "Send a thoughtful message to a friend or family member you haven't spoken to recently.",
+        "Tidy up a single drawer, shelf, or your desktop for 10 minutes.",
+        "Spend 10 minutes in a natural setting, like a park or garden, if possible."
+      ]
+    }
+  ]
+}

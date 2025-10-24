@@ -1,0 +1,35 @@
+
+{
+  "questions": [
+    { "id": "q1", "textKey": "assessment.q1_text", "optionsKey": "assessment.q1_opt", "optionsCount": 4 },
+    { "id": "q2", "textKey": "assessment.q2_text", "optionsKey": "assessment.q2_opt", "optionsCount": 4 },
+    { "id": "q3", "textKey": "assessment.q3_text", "optionsKey": "assessment.q3_opt", "optionsCount": 4 },
+    { "id": "q4", "textKey": "assessment.q4_text", "optionsKey": "assessment.q4_opt", "optionsCount": 5 },
+    { "id": "q5", "textKey": "assessment.q5_text", "optionsKey": "assessment.q5_opt", "optionsCount": 4 },
+    { "id": "q6", "textKey": "assessment.q6_text", "optionsKey": "assessment.q6_opt", "optionsCount": 4 },
+    { "id": "q7", "textKey": "assessment.q7_text", "optionsKey": "assessment.q7_opt", "optionsCount": 4 },
+    { "id": "q8", "textKey": "assessment.q8_text", "optionsKey": "assessment.q8_opt", "optionsCount": 4 },
+    { "id": "q9", "textKey": "assessment.q9_text", "optionsKey": "assessment.q9_opt", "optionsCount": 4 },
+    { "id": "q10", "textKey": "assessment.q10_text", "optionsKey": "assessment.q10_opt", "optionsCount": 4 },
+    { "id": "q11", "textKey": "assessment.q11_text", "optionsKey": "assessment.q11_opt", "optionsCount": 4 },
+    { "id": "q12", "textKey": "assessment.q12_text", "optionsKey": "assessment.q12_opt", "optionsCount": 4 },
+    { "id": "q13", "textKey": "assessment.q13_text", "optionsKey": "assessment.q13_opt", "optionsCount": 4 },
+    { "id": "q14", "textKey": "assessment.q14_text", "optionsKey": "assessment.q14_opt", "optionsCount": 4 },
+    { "id": "q15", "textKey": "assessment.q15_text", "optionsKey": "assessment.q15_opt", "optionsCount": 4 },
+    { "id": "q16", "textKey": "assessment.q16_text", "optionsKey": "assessment.q16_opt", "optionsCount": 4 },
+    { "id": "q17", "textKey": "assessment.q17_text", "optionsKey": "assessment.q17_opt", "optionsCount": 4 },
+    { "id": "q18", "textKey": "assessment.q18_text", "optionsKey": "assessment.q18_opt", "optionsCount": 4 },
+    { "id": "q19", "textKey": "assessment.q19_text", "optionsKey": "assessment.q19_opt", "optionsCount": 4 },
+    { "id": "q20", "textKey": "assessment.q20_text", "optionsKey": "assessment.q20_opt", "optionsCount": 4 },
+    { "id": "q21", "textKey": "assessment.q21_text", "optionsKey": "assessment.q21_opt", "optionsCount": 4 },
+    { "id": "q22", "textKey": "assessment.q22_text", "optionsKey": "assessment.q22_opt", "optionsCount": 4 },
+    { "id": "q23", "textKey": "assessment.q23_text", "optionsKey": "assessment.q23_opt", "optionsCount": 4 },
+    { "id": "q24", "textKey": "assessment.q24_text", "optionsKey": "assessment.q24_opt", "optionsCount": 4 },
+    { "id": "q25", "textKey": "assessment.q25_text", "optionsKey": "assessment.q25_opt", "optionsCount": 4 },
+    { "id": "q26", "textKey": "assessment.q26_text", "optionsKey": "assessment.q26_opt", "optionsCount": 4 },
+    { "id": "q27", "textKey": "assessment.q27_text", "optionsKey": "assessment.q27_opt", "optionsCount": 4, "type": "multiple-choice" },
+    { "id": "q28", "textKey": "assessment.q28_text", "optionsKey": "assessment.q28_opt", "optionsCount": 4, "type": "multiple-choice" },
+    { "id": "q29", "textKey": "assessment.q29_text", "optionsKey": "assessment.q29_opt", "optionsCount": 4, "type": "multiple-choice" },
+    { "id": "q30", "textKey": "assessment.q30_text", "placeholderKey": "assessment.q30_placeholder", "type": "textarea" }
+  ]
+}

@@ -1,0 +1,47 @@
+
+[
+  {
+    "profile": "profile_anxiety_stress",
+    "plan": {
+      "weeks": [
+        { "themeKey": "plan.anxiety_stress.week1_theme", "focusKey": "plan.anxiety_stress.week1_focus" },
+        { "themeKey": "plan.anxiety_stress.week2_theme", "focusKey": "plan.anxiety_stress.week2_focus" },
+        { "themeKey": "plan.anxiety_stress.week3_theme", "focusKey": "plan.anxiety_stress.week3_focus" },
+        { "themeKey": "plan.anxiety_stress.week4_theme", "focusKey": "plan.anxiety_stress.week4_focus" }
+      ]
+    }
+  },
+  {
+    "profile": "profile_depression_motivation",
+    "plan": {
+      "weeks": [
+        { "themeKey": "plan.depression_motivation.week1_theme", "focusKey": "plan.depression_motivation.week1_focus" },
+        { "themeKey": "plan.depression_motivation.week2_theme", "focusKey": "plan.depression_motivation.week2_focus" },
+        { "themeKey": "plan.depression_motivation.week3_theme", "focusKey": "plan.depression_motivation.week3_focus" },
+        { "themeKey": "plan.depression_motivation.week4_theme", "focusKey": "plan.depression_motivation.week4_focus" }
+      ]
+    }
+  },
+  {
+    "profile": "profile_burnout_fatigue",
+    "plan": {
+      "weeks": [
+        { "themeKey": "plan.burnout_fatigue.week1_theme", "focusKey": "plan.burnout_fatigue.week1_focus" },
+        { "themeKey": "plan.burnout_fatigue.week2_theme", "focusKey": "plan.burnout_fatigue.week2_focus" },
+        { "themeKey": "plan.burnout_fatigue.week3_theme", "focusKey": "plan.burnout_fatigue.week3_focus" },
+        { "themeKey": "plan.burnout_fatigue.week4_theme", "focusKey": "plan.burnout_fatigue.week4_focus" }
+      ]
+    }
+  },
+  {
+    "profile": "profile_balanced_resilience",
+    "plan": {
+      "weeks": [
+        { "themeKey": "plan.balanced_resilience.week1_theme", "focusKey": "plan.balanced_resilience.week1_focus" },
+        { "themeKey": "plan.balanced_resilience.week2_theme", "focusKey": "plan.balanced_resilience.week2_focus" },
+        { "themeKey": "plan.balanced_resilience.week3_theme", "focusKey": "plan.balanced_resilience.week3_focus" },
+        { "themeKey": "plan.balanced_resilience.week4_theme", "focusKey": "plan.balanced_resilience.week4_focus" }
+      ]
+    }
+  }
+]
