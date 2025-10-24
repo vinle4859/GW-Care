@@ -85,7 +85,7 @@ const Dashboard: React.FC = () => {
             </Card>
         )}
       </div>
-      <div className="lg:col-span-2">
+      <div className="lg:col-span-2 min-h-0">
           <Card className="w-full h-full flex flex-col">
             <EmotionTree />
           </Card>

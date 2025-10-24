@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect, useMemo } from 'react';
 import { AppContext } from '../../context/AppContext';
 import Card from '../shared/Card';
 import Button from '../shared/Button';
@@ -59,15 +59,10 @@ const AssessmentWizard: React.FC<AssessmentWizardProps> = ({ isInitialOnboarding
 
   const totalSteps = questions.length;
   const isPremium = subscriptionTier === 'plus' || subscriptionTier === 'pro';
-  const requiredQuestions = 26;
   const currentQuestion = questions[currentStep];
 
   const handleAnswer = (questionId: string, answer: number | string) => {
     setAnswers(prev => ({ ...prev, [questionId]: answer }));
-    // Automatically go to next question on selection for multiple choice
-    if (typeof answer === 'number' && currentStep < totalSteps - 1) {
-        setTimeout(() => handleNext(), 300);
-    }
   };
 
   const handleNext = () => setCurrentStep(s => Math.min(s + 1, totalSteps - 1));
@@ -87,23 +82,39 @@ const AssessmentWizard: React.FC<AssessmentWizardProps> = ({ isInitialOnboarding
       return answer !== undefined && answer !== '';
   }
 
-  const answeredRequiredCount = Object.keys(answers).filter(qId => {
-      const qNum = parseInt(qId.substring(1));
-      const answer = answers[qId];
-      return qNum <= requiredQuestions && answer !== undefined && answer !== '';
-  }).length;
-  const canSubmit = answeredRequiredCount >= requiredQuestions;
+  const canSubmit = useMemo(() => {
+    if (!questions || questions.length === 0) return false;
+    
+    // Count how many valid multiple-choice questions have been answered.
+    const answeredMcqCount = Object.keys(answers).reduce((count, questionId) => {
+        const question = questions.find(q => q.id === questionId);
+        // A valid MCQ answer is one for a non-textarea question with a numeric value.
+        if (question && question.type !== 'textarea' && typeof answers[questionId] === 'number') {
+            return count + 1;
+        }
+        return count;
+    }, 0);
+
+    // There are 29 multiple-choice questions that need to be answered.
+    return answeredMcqCount >= 29;
+  }, [answers, questions]);
+
 
   const handleSubmit = async () => {
+    if (!canSubmit) return;
     setIsLoading(true);
     try {
         let totalScore = 0;
-        for(let i = 0; i < requiredQuestions; i++) {
-            const qId = questions[i].id;
-            const answerIndex = answers[qId];
-            if (typeof answerIndex === 'number' && scoringRules[qId]) {
-                const scoreValue = scoringRules[qId][answerIndex];
-                totalScore += scoreValue;
+        // The scoring logic correctly iterates only through questions that have scoring rules.
+        for (const qId in scoringRules) {
+            if (Object.prototype.hasOwnProperty.call(scoringRules, qId)) {
+                const answerIndex = answers[qId];
+                if (typeof answerIndex === 'number') {
+                    const scoreValue = scoringRules[qId][answerIndex];
+                    if (typeof scoreValue === 'number') {
+                        totalScore += scoreValue;
+                    }
+                }
             }
         }
 
@@ -125,7 +136,7 @@ const AssessmentWizard: React.FC<AssessmentWizardProps> = ({ isInitialOnboarding
               });
             }
             if (onClose) onClose();
-            else setCurrentView('assessment'); // Move to result view after normal test
+            else setCurrentView('assessment');
         } else {
             throw new Error("Could not determine a profile for the given score.");
         }
@@ -220,29 +231,28 @@ const AssessmentWizard: React.FC<AssessmentWizardProps> = ({ isInitialOnboarding
                     </div>
                 )}
             </div>
-
-            <div className="mt-4 flex items-center justify-center">
-                {currentStep < requiredQuestions && (
-                    <p className="text-center text-sm text-shade-1/90 p-3 bg-white/10 rounded-xl">{t('assessment.required_info')}</p>
-                )}
-                 {currentStep >= requiredQuestions && currentStep < totalSteps - 1 && (
-                    <p className="text-center text-sm text-shade-1/90 p-3 bg-white/10 rounded-xl">{t('assessment.optional_info')}</p>
-                )}
-            </div>
         </div>
 
-        <div className="mt-4 flex justify-between items-center">
+        <div className="mt-8 flex justify-between items-center">
             <Button variant="ghost" onClick={handleBack} disabled={currentStep === 0 || isLoading}>{t('common.back')}</Button>
 
-            {currentStep < totalSteps - 1 ? (
-                <Button onClick={handleNext} disabled={!isCurrentQuestionAnswered()}>
-                    {t('common.next')}
-                </Button>
-            ) : (
-                <Button onClick={handleSubmit} disabled={isLoading || !canSubmit}>
-                    {isLoading ? t('assessment.submit_loading') : t('common.finish')}
-                </Button>
-            )}
+            <div className="flex items-center gap-2">
+                {currentStep < totalSteps - 1 && (
+                    <Button onClick={handleNext} disabled={!isCurrentQuestionAnswered()}>
+                        {t('common.next')}
+                    </Button>
+                )}
+
+                {currentStep === totalSteps - 1 && (
+                    <Button
+                        onClick={handleSubmit}
+                        disabled={isLoading || !canSubmit}
+                        title={!canSubmit ? t('assessment.all_required_info') : undefined}
+                    >
+                        {isLoading ? t('assessment.submit_loading') : t('common.finish')}
+                    </Button>
+                )}
+            </div>
         </div>
       </Card>
     </>
